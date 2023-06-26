@@ -74,19 +74,41 @@ function create_pixels(res) {
 let down = false;
 canvas.addEventListener("mousedown", mousedown);
 function mousedown(){
+    event.preventDefault();
     down = true;
+    console.log("true");
 }
 canvas.addEventListener("mouseup", mouseup);
 function mouseup(){
     down = false;
+    console.log("false");
 }
 
 function changeColor(e){
     if (down){
-        e.target.style.backgroundColor = "grey";
+        e.target.style.backgroundColor = colorValue;
     }
 }
 
-// 16 columns 26 columns 56 columns
-// do the calculation when the screen changes size
-// do the calc when the user changes the pixel size
+// Setup color picker
+let colorPicker;
+const defaultColor = "#ff0000"
+let colorValue = defaultColor;
+window.addEventListener("load", startup(), false);
+
+function startup(){
+    colorPicker = document.getElementById("color");
+    colorPicker.value = defaultColor;
+    colorPicker.addEventListener("input", updateColor, false);
+    colorPicker.addEventListener("change", updateAll, false);
+    colorPicker.select();
+}
+
+function updateColor(event){
+    colorValue = event.target.value;
+    console.log(colorValue);
+}
+
+function updateAll(event){
+    colorValue = event.target.value;
+}
