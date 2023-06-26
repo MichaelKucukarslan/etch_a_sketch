@@ -9,6 +9,7 @@ const MID_RES = 32;
 const HIGH_RES = 64;
 create_pixels(MID_RES);
 
+//redo the canvas if the user changes the resolution
 const lowResButton = document.getElementById("low");
 lowResButton.addEventListener("click", function(){
     deletePixels();
@@ -23,6 +24,14 @@ const highResButton = document.getElementById("High");
 highResButton.addEventListener("click", function(){
     deletePixels();
     create_pixels(HIGH_RES);
+})
+
+const clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", function (){
+    let pixels = Array.from(document.getElementsByClassName("pixel"));
+    pixels.forEach(e => {
+        e.style.backgroundColor = "white";
+    });
 })
 
 function deletePixels(){
