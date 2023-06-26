@@ -1,5 +1,5 @@
-[X] 16 by 16 Grid
-[ ] Options for bigger grids
-[X] Color squares when clicked
+[x] 16 by 16 Grid
+[x] Options for bigger grids
+[x] Color squares when clicked
 [ ] Different color options 
-[ ] Clear Colors with a button
+[x] Clear Colors with a button
