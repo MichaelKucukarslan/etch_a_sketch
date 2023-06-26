@@ -76,12 +76,10 @@ canvas.addEventListener("mousedown", mousedown);
 function mousedown(){
     event.preventDefault();
     down = true;
-    console.log("true");
 }
 canvas.addEventListener("mouseup", mouseup);
 function mouseup(){
     down = false;
-    console.log("false");
 }
 
 function changeColor(e){
@@ -92,7 +90,7 @@ function changeColor(e){
 
 // Setup color picker
 let colorPicker;
-const defaultColor = "#ff0000"
+const defaultColor = "#e558b8"
 let colorValue = defaultColor;
 window.addEventListener("load", startup(), false);
 
@@ -106,7 +104,6 @@ function startup(){
 
 function updateColor(event){
     colorValue = event.target.value;
-    console.log(colorValue);
 }
 
 function updateAll(event){
