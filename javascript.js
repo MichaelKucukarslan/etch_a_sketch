@@ -90,7 +90,7 @@ function changeColor(e){
 
 // Setup color picker
 let colorPicker;
-const defaultColor = "#e558b8"
+const defaultColor = "#505050"
 let colorValue = defaultColor;
 window.addEventListener("load", startup(), false);
 
